@@ -1,4 +1,5 @@
 import argparse
+from platforms import twitter, instagram, bluesky, plurk
 
 SUPPORTED_PLATFORMS = ["twitter", "instagram", "bluesky", "plurk"]
 
@@ -32,6 +33,20 @@ def main():
 
     print(f"Platforms to post: {', '.join(targets)}")
 
+    return text, targets
+
 
 if __name__ == "__main__":
-    main()
+    text, targets = main()  # 接收回傳的 text 和 targets
+
+    # 根據選擇平台呼叫模組
+    for p in targets:
+        if p == "twitter":
+            twitter.post(text)
+        elif p == "instagram":
+            instagram.post(text)
+        elif p == "bluesky":
+            bluesky.post(text)
+        elif p == "plurk":
+            plurk.post(text)
+
