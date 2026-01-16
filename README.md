@@ -7,3 +7,9 @@ Post the same content to multiple social platforms:
 - Plurk
 
 This project is under active development.
+
+## Development status
+
+- [x] Project initialized
+- [ ] Single-platform posting
+- [ ] Multi-platform cross-posting
